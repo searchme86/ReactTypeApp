@@ -1,4 +1,10 @@
-import { addDoc, collection, getFirestore } from 'firebase/firestore';
+import {
+  doc,
+  addDoc,
+  collection,
+  deleteDoc,
+  getFirestore,
+} from 'firebase/firestore';
 import { app } from './Firebase';
 import { AddHotelType } from '../Types/hotels';
 
@@ -16,4 +22,10 @@ export const hotelCollection = collection(firestore, 'hotels');
 export const addHotel = async (hotelData: AddHotelType) => {
   const newHotel = await addDoc(hotelCollection, { ...hotelData });
   console.log(`new hotel created at ${newHotel.path}`);
+};
+
+//Delete a document in your collection
+export const deleteHotel = async (id: string) => {
+  const document = doc(firestore, `hotel/${id}`);
+  await deleteDoc(document);
 };
