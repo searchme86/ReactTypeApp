@@ -6,14 +6,19 @@ function Navbar() {
     <nav className="navbar">
       <h1>Dashboard</h1>
       <div className="links">
-        <Link to="/" style={{ color: 'rgb(77,77,77)' }}>
+        <Link
+          to="/"
+          style={{
+            color: 'rgb(77, 77, 77)',
+          }}
+        >
           All Hotels
         </Link>
         <Link
           to="/create"
           style={{
             color: 'white',
-            background: 'rgb(77,77,77)',
+            backgroundColor: 'rgb(77, 77, 77)',
             borderRadius: '8px',
           }}
         >
