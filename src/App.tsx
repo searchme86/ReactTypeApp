@@ -1,10 +1,14 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Card from './Compoenents/Card';
+import Details from './Compoenents/Details';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Card />} />
+      <Route path="/hotels/:id" element={<Details />} />
+    </Routes>
   );
 }
 
