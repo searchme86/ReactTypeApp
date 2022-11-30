@@ -25,7 +25,9 @@ export const addHotel = async (hotelData: AddHotelType) => {
 };
 
 //Delete a document in your collection
-export const deleteHotel = async (id: string) => {
-  const document = doc(firestore, `hotel/${id}`);
+export const deleteHotel = async (id: string | undefined, navigate: any) => {
+  const document = doc(firestore, `hotels/${id}`);
   await deleteDoc(document);
+  console.log('hotel is deleted');
+  navigate('/');
 };
